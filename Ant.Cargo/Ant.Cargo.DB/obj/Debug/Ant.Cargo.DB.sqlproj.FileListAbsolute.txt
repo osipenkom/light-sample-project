@@ -1,0 +1,5 @@
+C:\Work\Ant.Cargo\Ant.Cargo.DB\bin\Debug\Ant.Cargo.DB.dacpac
+C:\Work\Ant.Cargo\Ant.Cargo.DB\bin\Debug\Ant.Cargo.DB.dll
+C:\Work\Ant.Cargo\Ant.Cargo.DB\bin\Debug\Ant.Cargo.DB.pdb
+C:\Work\Ant.Cargo\Ant.Cargo.DB\obj\Debug\Ant.Cargo.DB.dll
+C:\Work\Ant.Cargo\Ant.Cargo.DB\obj\Debug\Ant.Cargo.DB.pdb

@@ -1,0 +1,11 @@
+C:\Work\Ant.Cargo\Ant.Cargo.Model\bin\Debug\Ant.Cargo.Model.dll.config
+C:\Work\Ant.Cargo\Ant.Cargo.Model\bin\Debug\Ant.Cargo.Model.dll
+C:\Work\Ant.Cargo\Ant.Cargo.Model\bin\Debug\Ant.Cargo.Model.pdb
+C:\Work\Ant.Cargo\Ant.Cargo.Model\obj\Debug\Ant.Cargo.Model.dll
+C:\Work\Ant.Cargo\Ant.Cargo.Model\obj\Debug\Ant.Cargo.Model.pdb
+C:\Users\MAKSIM\Desktop\Ant.Cargo\Ant.Cargo.Model\bin\Debug\Ant.Cargo.Model.dll.config
+C:\Users\MAKSIM\Desktop\Ant.Cargo\Ant.Cargo.Model\bin\Debug\Ant.Cargo.Model.dll
+C:\Users\MAKSIM\Desktop\Ant.Cargo\Ant.Cargo.Model\bin\Debug\Ant.Cargo.Model.pdb
+C:\Users\MAKSIM\Desktop\Ant.Cargo\Ant.Cargo.Model\obj\Debug\Ant.Cargo.Model.csprojResolveAssemblyReference.cache
+C:\Users\MAKSIM\Desktop\Ant.Cargo\Ant.Cargo.Model\obj\Debug\Ant.Cargo.Model.dll
+C:\Users\MAKSIM\Desktop\Ant.Cargo\Ant.Cargo.Model\obj\Debug\Ant.Cargo.Model.pdb

@@ -1,0 +1,27 @@
+﻿@using System.Web.Optimization
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div data-ng-view="">
+</div>
+
+@section scripts
+{
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/angular-block-ui.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-2.1.4.min.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular-cookies.min.js"></script>
+    <script src="~/Scripts/angular-route.min.js"></script>
+    <script src="~/Scripts/angular-ui/ui-utils.min.js"></script>
+    <script src="~/Content/js/core.js"></script>
+    <script src="~/Content/js/main.js"></script>
+    <script src="~/Content/js/routes.js"></script>
+    <script src="~/Content/js/authInterceptor.js"></script>
+    <script src="~/Scripts/angular-vs-repeat.min.js"></script>
+    <script src="~/Scripts/angular-block-ui.js"></script>
+    @Scripts.Render("~/bundles/controllers")
+}

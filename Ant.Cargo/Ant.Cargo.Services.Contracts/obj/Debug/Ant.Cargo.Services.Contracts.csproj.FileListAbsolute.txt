@@ -1,0 +1,16 @@
+C:\Work\Ant.Cargo\Ant.Cargo.Services.Contracts\bin\Debug\Ant.Cargo.Services.Contracts.dll.config
+C:\Work\Ant.Cargo\Ant.Cargo.Services.Contracts\bin\Debug\Ant.Cargo.Services.Contracts.dll
+C:\Work\Ant.Cargo\Ant.Cargo.Services.Contracts\bin\Debug\Ant.Cargo.Services.Contracts.pdb
+C:\Work\Ant.Cargo\Ant.Cargo.Services.Contracts\obj\Debug\Ant.Cargo.Services.Contracts.csprojResolveAssemblyReference.cache
+C:\Work\Ant.Cargo\Ant.Cargo.Services.Contracts\obj\Debug\Ant.Cargo.Services.Contracts.dll
+C:\Work\Ant.Cargo\Ant.Cargo.Services.Contracts\obj\Debug\Ant.Cargo.Services.Contracts.pdb
+C:\Work\Ant.Cargo\Ant.Cargo.Services.Contracts\bin\Debug\Ant.Cargo.Model.dll
+C:\Work\Ant.Cargo\Ant.Cargo.Services.Contracts\bin\Debug\Ant.Cargo.Model.pdb
+C:\Users\MAKSIM\Desktop\Ant.Cargo\Ant.Cargo.Services.Contracts\bin\Debug\Ant.Cargo.Services.Contracts.dll.config
+C:\Users\MAKSIM\Desktop\Ant.Cargo\Ant.Cargo.Services.Contracts\bin\Debug\Ant.Cargo.Services.Contracts.dll
+C:\Users\MAKSIM\Desktop\Ant.Cargo\Ant.Cargo.Services.Contracts\bin\Debug\Ant.Cargo.Services.Contracts.pdb
+C:\Users\MAKSIM\Desktop\Ant.Cargo\Ant.Cargo.Services.Contracts\bin\Debug\Ant.Cargo.Model.dll
+C:\Users\MAKSIM\Desktop\Ant.Cargo\Ant.Cargo.Services.Contracts\bin\Debug\Ant.Cargo.Model.pdb
+C:\Users\MAKSIM\Desktop\Ant.Cargo\Ant.Cargo.Services.Contracts\obj\Debug\Ant.Cargo.Services.Contracts.csprojResolveAssemblyReference.cache
+C:\Users\MAKSIM\Desktop\Ant.Cargo\Ant.Cargo.Services.Contracts\obj\Debug\Ant.Cargo.Services.Contracts.dll
+C:\Users\MAKSIM\Desktop\Ant.Cargo\Ant.Cargo.Services.Contracts\obj\Debug\Ant.Cargo.Services.Contracts.pdb

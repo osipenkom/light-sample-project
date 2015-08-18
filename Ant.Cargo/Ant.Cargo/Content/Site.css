@@ -1,0 +1,176 @@
+﻿.form-signin {
+    margin-top: 200px;
+    background-color: rgb(244, 244, 244);
+    padding: 0px 25px 25px 25px;
+    border-radius: 4px;
+}
+
+.selected {
+    background-color: #428bca !important;
+    color: white;
+}
+
+.cell {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid rgb(244, 244, 244);
+    background-color: white;
+    border-radius: 4px;
+    max-height: 42px;
+}
+
+.cell-top {
+    background-color: rgb(203, 203, 203);
+    cursor: auto;
+    max-height: 42px;
+}
+
+.icon-margin-right {
+    margin-right: 10px;
+}
+
+.main-page {
+    background-color: rgb(244, 244, 244);
+    padding: 15px;
+    margin-top: 50px;
+    border-radius: 10px;
+}
+
+.district {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid rgb(244, 244, 244);
+    background-color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    height: 42px;
+}
+
+.district-settings {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid rgb(244, 244, 244);
+    background-color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.no-padding {
+    padding: 0px;
+}
+
+.no-margin {
+    margin: 0px;
+}
+
+.sms-area {
+    resize: vertical;
+}
+
+.popup {
+    overflow: hidden;
+    position: fixed;
+    top: 100px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    outline: 0;
+    background-color: rgb(244, 244, 244);
+    border-radius: 10px;
+    border: 1px solid white;
+    width: 40%;
+    transition: 0.15s linear;
+}
+
+.districts-popup {
+    height: 525px !important;
+}
+
+.vehicles-popup {
+    height: 350px !important;
+}
+
+.districts-popup > div.row {
+    padding: 15px;
+    height: 100%;
+}
+
+.popup h3 {
+    margin-bottom: 20px;
+    padding-right: 20px;
+}
+
+    .popup h3 .glyphicon-remove {
+        float: right;
+        cursor: pointer;
+    }
+
+.districts-popup .row.vehicle-table {
+    margin: 0px;
+    height: 294px;
+    overflow-y: scroll;
+}
+
+.popup .row.actions {
+    margin: 0px;
+    bottom: 15px;
+    position: absolute;
+    width: 100%;
+    right: 15px;
+}
+
+.vehicles-popup > div.row {
+    padding: 15px;
+    height: 100%;
+}
+
+.vehicle-table .cell.button {
+    padding: 0px;
+    cursor: auto;
+    height:42px;
+}
+
+    .vehicle-table .cell.button button {
+        height: 41px;
+    }
+
+    .vehicle-table div {
+        min-height: 42px;
+    }
+
+.selected-danger {
+    background-color: #d9534f !important;
+    color: white;
+}
+
+.text-overflow {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.manual-selected-vehicles {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.row.actions div {
+    padding: 1px;
+}
+
+.manual-selected-vehicles .btn {
+    height: 20px;
+    padding: 0px;
+}
+
+.vehicle-table-header {
+    margin: 0px;
+    padding-right: 17px;
+}
+.vehicle-table-header .search-input {
+    padding: 7px;
+}
+.vehicle-table-header .search-input input {
+    height: 26px;
+}

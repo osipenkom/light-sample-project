@@ -1,0 +1,136 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<div class="container">
+    <div class="row main-page">
+        <h3 class="text-center" style="margin-bottom: 20px;">Vechicles Base</h3>
+        <div class="col-md-9">
+            <span data-ng-repeat="district in districts">
+                <div class="col-md-3 district text-overflow" data-ng-class="checkIfDistrictSelected(district)" data-ng-click="changeDistrictSettingsClick(district)" title="{{district.Name}}">
+                    {{district.Name}}
+                </div>
+                <div class="col-md-1 district-settings" data-ng-class="checkIfDistrictSelected(district)" data-ng-click="changeDistrictStateClick(district)">
+                    <span class="glyphicon glyphicon-envelope"></span>
+                </div>
+            </span>
+        </div>
+        <div class="col-md-3">
+            <div class="col-md-12 form-group no-padding">
+                <button class="btn btn-primary btn-block" data-ng-click="toggleVehiclePopup()">Add Vehicle</button>
+            </div>
+            <div class="col-md-12 form-group no-padding row " style="margin: 0px 0px 15px 0px;">
+                <div class="col-md-12 form-group no-padding">
+                    Number of vehicles for sms sending:
+                    <span data-ng-if="VehiclesForSendSms.length > 0">{{VehiclesForSendSms.length}}</span>
+                    <span data-ng-if="VehiclesForSendSmsManually.length > 0">{{VehiclesForSendSmsManually.length}}</span>
+                </div>
+                <div class="manual-selected-vehicles">
+                    <div class="col-md-10 no-padding cell" data-ng-repeat-start="vehicle in VehiclesForSendSmsManually">
+                        {{vehicle.PhoneNumber}}
+                    </div>
+                    <div class="col-md-2 no-padding cell" data-ng-repeat-end data-ng-click="selectVehicleForSmsSendClick(vehicle)">
+                        <button class="btn btn-default btn-block"><span class="glyphicon glyphicon-trash"></span></button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 form-group no-padding">
+                <textarea class="form-control sms-area" rows="3" data-ng-model="SmsMessage" placeholder="Введите текст сообщения тут"></textarea>
+            </div>
+            <div class="col-md-12 form-group no-padding">
+                <button class="btn btn-primary btn-block"
+                        data-ng-disabled="selectedDistricts.length == 0 && VehiclesForSendSmsManually.length == 0"
+                        data-ng-click="sendMessageClick()">
+                    Send message
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container fade in districts-popup popup" data-ng-show="isDistrictSettingsVisible">
+    <div class="row">
+        <h3 class="text-center">{{currentDistrict.Name}}<span class="glyphicon glyphicon-remove" data-ng-click="closeDistrictSettingsClick()"></span></h3>
+        <div class="row vehicle-table-header">
+            <div class="col-md-12 cell cell-top search-input">
+                <input type="text" class="form-control" placeholder="Search" data-ng-model="searchVehicleString" data-ng-keyup="searchVehiclesKeyUp()" />
+            </div>
+            <div class="col-md-3 cell cell-top text-overflow" title="Марка">Vehicle Brand</div>
+            <div class="col-md-3 cell cell-top text-overflow" title="Гос. номер">Registration Number</div>
+            <div class="col-md-4 cell cell-top text-overflow" title="Тел. номер">Phone Number</div>
+            <div class="col-md-2 cell cell-top text-overflow" title="Действия">Actions</div>
+        </div>
+        <div class="row vehicle-table">
+            <div class="col-md-3 cell" data-ng-repeat-start="vehicle in currentDistrict.Vehicles | filter:searchText | limitTo:vehiclesLimit" data-ng-class="checkIfVehicleSelected(vehicle)">{{vehicle.Model}}</div>
+            <div class="col-md-3 cell" data-ng-class="checkIfVehicleSelected(vehicle)">{{vehicle.RegistrationNumber}}</div>
+            <div class="col-md-4 cell" data-ng-class="checkIfVehicleSelected(vehicle)">{{vehicle.PhoneNumber}}</div>
+            <div class="col-md-1 cell button">
+                <button class="btn btn-default btn-block" data-ng-click="selectVehicleForDeleteClick(vehicle)" data-ng-class="checkIfVehicleSelected(vehicle)">
+                    <span class="glyphicon glyphicon-trash"></span>
+                </button>
+            </div>
+            <div class="col-md-1 cell button" data-ng-repeat-end data-ng-disabled="VehiclesForSendSms.length > 0">
+                <button class="btn btn-default btn-block" data-ng-disabled="VehiclesForSendSms.length > 0" data-ng-click="selectVehicleForSmsSendClick(vehicle)" data-ng-class="checkIfVehicleSelectedForSMSSend(vehicle)">
+                    <span class="glyphicon glyphicon-envelope"></span>
+                </button>
+            </div>
+        </div>
+        <div class="row actions">
+            <div class="col-md-6"></div>
+            <div class="col-md-2">
+                <button class="btn btn-default btn-block" data-ng-click="closeDistrictSettingsClick()"><span class="glyphicon glyphicon-arrow-left icon-margin-right"></span>Back</button>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-danger btn-block" data-ng-disabled="selectedVehicles.length <=0" data-ng-click="deleteVehiclesClick()"><span class="glyphicon glyphicon-trash icon-margin-right"></span>Delete {{selectedVehicles.length}}</button>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-primary btn-block" data-ng-click="toggleVehiclePopup()"><span class="glyphicon glyphicon-plus icon-margin-right"></span>Add</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container fade in vehicles-popup popup" data-ng-if="isAddVehicleVisible">
+    <div class="row">
+        <h3 class="text-center">Create Vehicle<span class="glyphicon glyphicon-remove" data-ng-click="toggleVehiclePopup()"></span></h3>
+        <div class="row no-margin">
+            <form class="form-horizontal" data-ng-submit="addNewVihicle()">
+                <div class="form-group">
+                    <label for="" class="col-md-3 control-label">District</label>
+                    <div class="col-md-9">
+                        <select class="form-control" data-ng-options="district.ID as district.Name for district in districts" data-ng-model="vehicle.DistrictID"></select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="" class="col-md-3 control-label">Vehicle Brand</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" placeholder="Vehicle Brand" data-ng-model="vehicle.Model">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="" class="col-md-3 control-label">Registration Number</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" placeholder="Registration Number" data-ng-model="vehicle.RegistrationNumber">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="" class="col-md-3 control-label">Phone Number</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" data-ng-model="vehicle.PhoneNumber" data-ui-mask="7 (999) 999-99-99">
+                    </div>
+                </div>
+                <div class="row actions">
+                    <div class="col-md-offset-8 col-md-2">
+                        <button class="btn btn-default btn-block" data-ng-click="toggleVehiclePopup('toDistrict')"><span class="glyphicon glyphicon-arrow-left icon-margin-right"></span>Back</button>
+                    </div>
+                    <div class="col-md-2">
+                        <button type="submit" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-save icon-margin-right"></span>Save</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div data-ng-class="checkBackgroundStyle()"></div>
+

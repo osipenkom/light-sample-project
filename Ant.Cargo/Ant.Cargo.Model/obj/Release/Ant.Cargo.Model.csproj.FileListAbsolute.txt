@@ -1,0 +1,6 @@
+C:\Work\Kvartirant\Ant.Cargo\Ant.Cargo.Model\bin\Release\Ant.Cargo.Model.dll.config
+C:\Work\Kvartirant\Ant.Cargo\Ant.Cargo.Model\bin\Release\Ant.Cargo.Model.dll
+C:\Work\Kvartirant\Ant.Cargo\Ant.Cargo.Model\bin\Release\Ant.Cargo.Model.pdb
+C:\Work\Kvartirant\Ant.Cargo\Ant.Cargo.Model\obj\Release\Ant.Cargo.Model.csprojResolveAssemblyReference.cache
+C:\Work\Kvartirant\Ant.Cargo\Ant.Cargo.Model\obj\Release\Ant.Cargo.Model.dll
+C:\Work\Kvartirant\Ant.Cargo\Ant.Cargo.Model\obj\Release\Ant.Cargo.Model.pdb

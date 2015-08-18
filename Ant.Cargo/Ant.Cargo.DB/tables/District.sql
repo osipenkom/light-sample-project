@@ -1,0 +1,5 @@
+﻿CREATE TABLE [dbo].[District]
+(
+	[ID] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [Name] NVARCHAR(250) NOT NULL
+)

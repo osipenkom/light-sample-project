@@ -1,0 +1,23 @@
+﻿@using System.Web.Optimization
+
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" data-ng-app="app" lang="ru"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" data-ng-app="app" lang="ru"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" data-ng-app="app" lang="ru"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" data-ng-app="app" lang="ru">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="~/Content/img/favicon.ico" type="image/x-icon" />
+
+    @RenderSection("scripts", required: false)
+
+</head>
+<body>
+    @RenderBody()
+</body>
+</html>
