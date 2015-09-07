@@ -14,8 +14,7 @@ namespace Ant.Cargo.Services.Mappers
     {
         public static void CreateMaps()
         {
-            Mapper.CreateMap<District, DistrictDto>()
-                .ForMember(x=>x.Vehicles, y => y.UseValue(new List<VehicleDto>()));
+            Mapper.CreateMap<District, DistrictDto>();
 
             Mapper.CreateMap<DistrictDto, District>();
         }

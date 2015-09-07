@@ -21,7 +21,7 @@ namespace Ant.Cargo.Data.Contracts.Repo
 
         void AddDistrict(String districtName);
 
-        District GetDistrictByID(Int32 districtID);
+        District GetDistrictByID(Int32 districtID, Boolean includeVehicles);
 
         IEnumerable<Vehicle> GetVehiclesByPhone(String phone);
 

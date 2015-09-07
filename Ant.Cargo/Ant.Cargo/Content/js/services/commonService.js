@@ -62,8 +62,8 @@ app.service('commonService', ['$http', '$rootScope', '$timeout', '$q', function 
                 });
     }
 
-    this.getDistrictsByID = function (districtID) {
-        return $http.get('api/district/getdistrictbyid', { params: { districtID: districtID } })
+    this.getDistrictByID = function (districtID, includeVehicles) {
+        return $http.get('api/district/getdistrictbyid', { params: { districtID: districtID, includeVehicles: includeVehicles } })
             .then(function (response) {
                 return response.data;
             });

@@ -34,13 +34,13 @@ namespace Ant.Cargo.Client.Controllers
                 _service.AddDistrict(districtName);
                 return Ok();
             }
-            return Ok("Enter District Name, please.");
+            return Ok("Введите название области");
         }
 
         [HttpGet]
-        public IHttpActionResult GetDistrictByID(Int32 districtID)
+        public IHttpActionResult GetDistrictByID(Int32 districtID, Boolean includeVehicles)
         {
-            var data = _service.GetDistrictByID(districtID);
+            var data = _service.GetDistrictByID(districtID, includeVehicles);
             var result = Mapper.Map<DistrictModel>(data);
             return Ok(result);
         }

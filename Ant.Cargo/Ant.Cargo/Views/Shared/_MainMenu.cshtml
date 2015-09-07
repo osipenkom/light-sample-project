@@ -1,0 +1,30 @@
+﻿<div class="col-md-3">
+    <div class="col-md-12 form-group no-padding">
+        <button class="btn btn-primary btn-block" data-ng-click="goToAddVehicleClick()">Добавить объект</button>
+    </div>
+    <div class="col-md-12 form-group no-padding row " style="margin: 0px 0px 15px 0px;">
+        <div class="col-md-12 form-group no-padding">
+            Количество машин для отправки сообщений:
+            <span data-ng-if="VehiclesForSendSms.length > 0">{{VehiclesForSendSms.length}}</span>
+            <span data-ng-if="VehiclesForSendSmsManually.length > 0">{{VehiclesForSendSmsManually.length}}</span>
+        </div>
+        <div class="manual-selected-vehicles">
+            <div class="col-md-10 no-padding cell" data-ng-repeat-start="vehicle in VehiclesForSendSmsManually">
+                {{vehicle.PhoneNumber}}
+            </div>
+            <div class="col-md-2 no-padding cell" data-ng-repeat-end data-ng-click="selectVehicleForSmsSendClick(vehicle)">
+                <button class="btn btn-default btn-block"><span class="glyphicon glyphicon-trash"></span></button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 form-group no-padding">
+        <textarea class="form-control sms-area" rows="3" data-ng-model="SmsMessage" placeholder="Введите текст сообщения тут"></textarea>
+    </div>
+    <div class="col-md-12 form-group no-padding">
+        <button class="btn btn-primary btn-block"
+                data-ng-disabled="selectedDistricts.length == 0 && VehiclesForSendSmsManually.length == 0"
+                data-ng-click="sendMessageClick()">
+            Отправить сообщение
+        </button>
+    </div>
+</div>

@@ -5,6 +5,7 @@ var app = angular.module('app', ['ngRoute', 'ngCookies', 'ui.utils', 'blockUI'])
                         $httpProvider.interceptors.push('authInterceptor');
                     }])
                     .run(['$rootScope', 'commonService', '$location', '$cookies', '$timeout', function ($rootScope, commonService, $location, $cookies, $timeout) {
+                        $rootScope.vehiclesLimit = 50;
                     }]);
 
 app.directive('myOnKeyDownCall', function () {

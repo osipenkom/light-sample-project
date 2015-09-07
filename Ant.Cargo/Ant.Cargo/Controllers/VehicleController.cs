@@ -22,18 +22,16 @@ namespace Ant.Cargo.Client.Controllers
         [HttpPost]
         public IHttpActionResult AddVehicle(VehicleModel model)
         {
-            var result = CheckVehicleModel(model);
-            if (String.IsNullOrEmpty(result))
+            var result = new AddVehicleResultModel { ErrorMessage = CheckVehicleModel(model) };
+
+            if (String.IsNullOrEmpty(result.ErrorMessage))
             {
                 model.PhoneNumber = "7" + model.PhoneNumber;
                 var data = Mapper.Map<VehicleDto>(model);
-                _service.AddVehicle(data);
-                return Ok();
+                result.VehicleID = _service.AddVehicle(data);
             }
-            else
-            {
-                return Ok(result);
-            }
+
+            return Ok(result);
         }
 
         [HttpPost]
@@ -56,7 +54,7 @@ namespace Ant.Cargo.Client.Controllers
 
             if (model.DistrictID <= 0)
             {
-                result = "Select District, please.";
+                result = "Укажите район";
                 return result;
             }
             //if (String.IsNullOrEmpty(model.Model))
@@ -71,12 +69,12 @@ namespace Ant.Cargo.Client.Controllers
             //}
             if (String.IsNullOrEmpty(model.PhoneNumber))
             {
-                result = "Enter driver mobile phone number, please.";
+                result = "Укажите номер водителя";
                 return result;
             }
             else if (_service.GetVehiclesByPhone("7" + model.PhoneNumber).Count() > 0)
             {
-                result = String.Format("Vehicle with phone number {0} already exists.", "7" + model.PhoneNumber);
+                result = String.Format("Машина с номером {0} уже существует.", "7" + model.PhoneNumber);
                 return result;
             }
 

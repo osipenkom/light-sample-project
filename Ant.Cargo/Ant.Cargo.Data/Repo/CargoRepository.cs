@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data.Entity;
 
 namespace Ant.Cargo.Data.Repo
 {
@@ -54,9 +55,16 @@ namespace Ant.Cargo.Data.Repo
             base.Add(district);
         }
 
-        public District GetDistrictByID(Int32 districtID)
+        public District GetDistrictByID(Int32 districtID, Boolean includeVehicles)
         {
-            return GetSingle<District>(x => x.ID == districtID);
+            var result = GetQuery<District>(x => x.ID == districtID);
+
+            if (includeVehicles)
+            {
+                result = result.Include(x => x.Vehicles);
+            }
+
+            return result.Single();
         }
 
         public IEnumerable<Vehicle> GetVehiclesByPhone(String phone)

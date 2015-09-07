@@ -53,14 +53,5 @@ namespace Ant.Cargo.Services
                 return value;
             }
         }
-
-        public static Int32 SendSMSLimit
-        {
-            get
-            {
-                Int32 value = Convert.ToInt32(ConfigurationManager.AppSettings["SendSMSLimit"]);
-                return value;
-            }
-        }
     }
 }

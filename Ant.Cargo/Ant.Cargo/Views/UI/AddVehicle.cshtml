@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "Add New Vehicle";
+}
+
+<div class="container">
+    <div class="row main-page">
+        <h3 class="text-center">Добавление объекта</h3>
+        <div class="col-md-9">
+            <div class="row no-margin">
+                <form class="form-horizontal add-vehicle" data-ng-submit="addNewVihicle()">
+                    <div class="form-group">
+                        <label for="" class="col-md-3 control-label">Область</label>
+                        <div class="col-md-9">
+                            <select class="form-control" data-ng-options="district.ID as district.Name for district in districts" data-ng-model="vehicle.DistrictID"></select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-md-3 control-label">Марка авто</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" placeholder="Марка" data-ng-model="vehicle.Model">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-md-3 control-label">Номер авто</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" placeholder="Номер авто" data-ng-model="vehicle.RegistrationNumber">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-md-3 control-label">Номер телефона</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" data-ng-model="vehicle.PhoneNumber" data-ui-mask="7 (999) 999-99-99">
+                        </div>
+                    </div>
+                    <div class="row actions">
+                        <div class="col-md-offset-8 col-md-2">
+                            <button type="button" class="btn btn-default btn-block" data-ng-click="backButtonClick()"><span class="glyphicon glyphicon-arrow-left icon-margin-right"></span>Назад</button>
+                        </div>
+                        <div class="col-md-2">
+                            <button type="submit" class="btn btn-primary btn-block"><span class="glyphicon glyphicon-save icon-margin-right"></span>Сохранить</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        @Html.Partial("_MainMenu")
+    </div>
+</div>

@@ -205,6 +205,7 @@
     <Compile Include="Mappers\AutomapperExtensions.cs" />
     <Compile Include="Mappers\CargoModelMap.cs" />
     <Compile Include="Mappers\MappersConfiguration.cs" />
+    <Compile Include="Models\AddVehicleResultModel.cs" />
     <Compile Include="Models\DistrictModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\SmsDistrictModel.cs" />
@@ -221,7 +222,9 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\js\authInterceptor.js" />
+    <Content Include="Content\js\controllers\addVehicleController.js" />
     <Content Include="Content\js\controllers\authorizationController.js" />
+    <Content Include="Content\js\controllers\districtController.js" />
     <Content Include="Content\js\controllers\homeController.js" />
     <Content Include="Content\js\core.js" />
     <Content Include="Content\js\main.js" />
@@ -1129,6 +1132,9 @@
     <Content Include="Views\UI\Index.cshtml" />
     <Content Include="Scripts\version.json" />
     <Content Include="Views\UI\Login.cshtml" />
+    <Content Include="Views\Shared\_MainMenu.cshtml" />
+    <Content Include="Views\UI\District.cshtml" />
+    <Content Include="Views\UI\AddVehicle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

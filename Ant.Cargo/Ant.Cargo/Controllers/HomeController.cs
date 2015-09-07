@@ -23,16 +23,15 @@ namespace Ant.Cargo.Client.Controllers
         {
             if (String.IsNullOrEmpty(model.Text))
             {
-                return Ok("Enter SMS text, please.");
+                return Ok("Введите текст сообщения");
             }
             if (model.Districts.Count() <= 0)
             {
-                return Ok("Choose district, please.");
+                return Ok("Выберете области для отправки сообщений");
             }
 
             var vehicles = model.Districts.SelectMany(x => x.Vehicles);
             var phones = vehicles.Select(x=>x.PhoneNumber).Distinct();
-            //var phones = String.Join(",", phoneNumbers);
 
             if (phones.Count() > 0)
             {
@@ -48,15 +47,14 @@ namespace Ant.Cargo.Client.Controllers
         {
             if (String.IsNullOrEmpty(model.Text))
             {
-                return Ok("Enter SMS text, please.");
+                return Ok("Введите текст сообщения");
             }
             if (model.Vehicles.Count() <= 0)
             {
-                return Ok("Choose vehicles, please.");
+                return Ok("Выберете машины для отправки сообщений");
             }
 
             var phones = model.Vehicles.Select(x => x.PhoneNumber).Distinct();
-            //var phones = String.Join(",", phoneNumbers);
 
             if (phones.Count() > 0)
             {

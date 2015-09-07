@@ -44,7 +44,7 @@ namespace Ant.Cargo.Services
             return result;
         }
 
-        public void AddVehicle(VehicleDto model)
+        public Int32 AddVehicle(VehicleDto model)
         {
             var result = String.Empty;
             var repository = DataContextManager.CreateRepository<ICargoRepository>();
@@ -52,6 +52,7 @@ namespace Ant.Cargo.Services
             var data = mapper.MapFromModel(model);
             repository.AddVehicle(data);
             DataContextManager.Save();
+            return data.ID;
         }
 
         public IEnumerable<VehicleDto> GetVehiclesByPhone(String phone)
@@ -76,12 +77,12 @@ namespace Ant.Cargo.Services
             {
                 SMSC smsc = new SMSC();
 
-                var senderSMSLimit = Configuration.SendSMSLimit;
-                var totalSends = model.Phones.Count() / senderSMSLimit;
+                var smsSendLimit = 50;
+                var totalSends = model.Phones.Count() / smsSendLimit;
 
                 for (int i = 0; i <= totalSends; i++)
                 {
-                    var phonesForSend = model.Phones.Skip(i * senderSMSLimit).Take(senderSMSLimit);
+                    var phonesForSend = model.Phones.Skip(i * smsSendLimit).Take(smsSendLimit);
                     var phonesForSendString = String.Join(",", phonesForSend);
                     if (!String.IsNullOrEmpty(phonesForSendString))
                     {
@@ -104,11 +105,11 @@ namespace Ant.Cargo.Services
             DataContextManager.Save();
         }
 
-        public DistrictDto GetDistrictByID(Int32 districtID)
+        public DistrictDto GetDistrictByID(Int32 districtID, Boolean includeVehicles)
         {
             var repository = DataContextManager.CreateRepository<ICargoRepository>();
             var mapper = MapperFactory.CreateMapper<IDistrictMapper>();
-            var data = repository.GetDistrictByID(districtID);
+            var data = repository.GetDistrictByID(districtID, includeVehicles);
             var result = mapper.MapToModel(data);
             return result;
         }

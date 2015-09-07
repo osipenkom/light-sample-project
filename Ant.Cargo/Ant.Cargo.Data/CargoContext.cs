@@ -13,6 +13,7 @@ namespace Ant.Cargo.Data
         public CargoContext(ConnectionConfiguration configuration)
             : base(configuration)
         {
+            this.Configuration.LazyLoadingEnabled = false;
         }
 
         /// <summary>

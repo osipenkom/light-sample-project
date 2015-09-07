@@ -13,7 +13,7 @@ namespace Ant.Cargo.Services.Contracts
 
         Boolean CheckUserCredentials(UserDto userModel);
 
-        void AddVehicle(VehicleDto model);
+        Int32 AddVehicle(VehicleDto model);
 
         IEnumerable<VehicleDto> GetVehiclesByPhone(String phone);
 
@@ -23,7 +23,7 @@ namespace Ant.Cargo.Services.Contracts
 
         void AddDistrict(String districtName);
 
-        DistrictDto GetDistrictByID(Int32 districtID);
+        DistrictDto GetDistrictByID(Int32 districtID, Boolean includeVehicles);
 
         IEnumerable<VehicleDto> GetVehiclesByDistrictID(Int32 districtID);
     }

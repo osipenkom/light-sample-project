@@ -1,8 +1,0 @@
-C:\Work\Kvartirant\Ant.Cargo\Ant.Cargo.Services.Contracts\bin\Release\Ant.Cargo.Services.Contracts.dll.config
-C:\Work\Kvartirant\Ant.Cargo\Ant.Cargo.Services.Contracts\bin\Release\Ant.Cargo.Services.Contracts.dll
-C:\Work\Kvartirant\Ant.Cargo\Ant.Cargo.Services.Contracts\bin\Release\Ant.Cargo.Services.Contracts.pdb
-C:\Work\Kvartirant\Ant.Cargo\Ant.Cargo.Services.Contracts\bin\Release\Ant.Cargo.Model.dll
-C:\Work\Kvartirant\Ant.Cargo\Ant.Cargo.Services.Contracts\bin\Release\Ant.Cargo.Model.pdb
-C:\Work\Kvartirant\Ant.Cargo\Ant.Cargo.Services.Contracts\obj\Release\Ant.Cargo.Services.Contracts.csprojResolveAssemblyReference.cache
-C:\Work\Kvartirant\Ant.Cargo\Ant.Cargo.Services.Contracts\obj\Release\Ant.Cargo.Services.Contracts.dll
-C:\Work\Kvartirant\Ant.Cargo\Ant.Cargo.Services.Contracts\obj\Release\Ant.Cargo.Services.Contracts.pdb

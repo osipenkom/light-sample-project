@@ -106,18 +106,20 @@
         cursor: pointer;
     }
 
-.districts-popup .row.vehicle-table {
+.row.vehicle-table {
     margin: 0px;
-    height: 294px;
+    max-height: 600px;
     overflow-y: scroll;
+    margin-bottom: 20px;    
 }
 
-.popup .row.actions {
+.row.actions {
     margin: 0px;
-    bottom: 15px;
-    position: absolute;
+    /*bottom: 15px;*/
+    /*position: absolute;*/
     width: 100%;
-    right: 15px;
+    /*right: 15px;*/
+    padding-right: 17px;
 }
 
 .vehicles-popup > div.row {
@@ -173,4 +175,8 @@
 }
 .vehicle-table-header .search-input input {
     height: 26px;
+}
+
+.add-vehicle div {
+    padding-right: 17px;
 }

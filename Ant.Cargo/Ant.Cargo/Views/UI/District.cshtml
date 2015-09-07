@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "District";
+}
+
+<div class="container">
+    <div class="row main-page">
+        <h3 class="text-center">{{currentDistrict.Name}}</h3>
+        <div class="col-md-9">
+            <div class="row vehicle-table-header">
+                <div class="col-md-12 cell cell-top search-input">
+                    <input type="text" class="form-control" placeholder="Поиск по любому параметру" data-ng-model="searchVehicleString" data-ng-keyup="searchVehiclesKeyUp()" />
+                </div>
+                <div class="col-md-3 cell cell-top text-overflow" title="Марка">Марка</div>
+                <div class="col-md-3 cell cell-top text-overflow" title="Гос. номер">Гос. номер</div>
+                <div class="col-md-4 cell cell-top text-overflow" title="Тел. номер">Тел. номер</div>
+                <div class="col-md-2 cell cell-top text-overflow" title="Действия">Действия</div>
+            </div>
+            <div class="row vehicle-table">
+                <div class="col-md-3 cell" data-ng-repeat-start="vehicle in currentDistrict.Vehicles | filter:searchText | limitTo:vehiclesLimit" data-ng-class="checkIfVehicleSelected(vehicle)">{{vehicle.Model}}</div>
+                <div class="col-md-3 cell" data-ng-class="checkIfVehicleSelected(vehicle)">{{vehicle.RegistrationNumber}}</div>
+                <div class="col-md-4 cell" data-ng-class="checkIfVehicleSelected(vehicle)">{{vehicle.PhoneNumber}}</div>
+                <div class="col-md-1 cell button">
+                    <button class="btn btn-default btn-block" data-ng-click="selectVehicleForDeleteClick(vehicle)" data-ng-class="checkIfVehicleSelected(vehicle)">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </button>
+                </div>
+                <div class="col-md-1 cell button" data-ng-repeat-end data-ng-disabled="VehiclesForSendSms.length > 0">
+                    <button class="btn btn-default btn-block" data-ng-disabled="VehiclesForSendSms.length > 0" data-ng-click="selectVehicleForSmsSendClick(vehicle)" data-ng-class="checkIfVehicleSelectedForSMSSend(vehicle)">
+                        <span class="glyphicon glyphicon-envelope"></span>
+                    </button>
+                </div>
+            </div>
+            <div class="row actions">
+                <div class="col-md-6"></div>
+                <div class="col-md-2">
+                    <button class="btn btn-default btn-block" data-ng-click="closeDistrictSettingsClick()"><span class="glyphicon glyphicon-arrow-left icon-margin-right"></span>Назад</button>
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-danger btn-block" data-ng-disabled="selectedVehicles.length <=0" data-ng-click="deleteVehiclesClick()"><span class="glyphicon glyphicon-trash icon-margin-right"></span>Удалить {{selectedVehicles.length}}</button>
+                </div>
+                @*<div class="col-md-2"><button class="btn btn-primary btn-block">Редактировать</button></div>*@
+                <div class="col-md-2">
+                    <button class="btn btn-primary btn-block" data-ng-click="goToAddVehicleClick()"><span class="glyphicon glyphicon-plus icon-margin-right"></span>Добавить</button>
+                </div>
+            </div>
+        </div>
+        @Html.Partial("_MainMenu")
+    </div>
+</div>

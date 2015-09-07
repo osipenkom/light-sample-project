@@ -38,7 +38,7 @@ namespace Ant.Cargo.Client.Controllers
             }
             else
             {
-                simpleValidationResult = "Incorrect login or Password";
+                simpleValidationResult = "Неправильный логин или пароль";
                 return Ok(simpleValidationResult);
             }
         }
@@ -49,18 +49,18 @@ namespace Ant.Cargo.Client.Controllers
 
             if (model == null)
             {
-                result = "Incorrect login or Password";
+                result = "Неправильный логин или пароль";
                 return result;
             }
 
             if (String.IsNullOrEmpty(model.Login))
             {
-                result = "Enter login please";
+                result = "Введите логин";
                 return result;
             }
             if (String.IsNullOrEmpty(model.Password))
             {
-                result = "Enter password please";
+                result = "Введите пароль";
                 return result;
             }
             return result;
