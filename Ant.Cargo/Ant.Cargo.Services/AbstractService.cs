@@ -16,7 +16,6 @@ namespace Ant.Cargo.Services
             MapperFactory = new MapperFactory(container);
         }
 
-
         protected IDataContextManager DataContextManager { get; private set; }
 
         protected MapperFactory MapperFactory { get; private set; }
