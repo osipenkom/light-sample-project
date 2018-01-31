@@ -21,6 +21,7 @@ namespace Ant.Cargo.Services
             : base(contextManager, container)
         { }
 
+
         public IEnumerable<DistrictDto> GetDistricts()
         {
             var repository = DataContextManager.CreateRepository<ICargoRepository>();
